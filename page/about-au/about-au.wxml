@@ -1,0 +1,9 @@
+<!--page/about-au/about-au.wxml-->
+<text>page/about-au/about-au.wxml</text>
+<view>
+  <text>此处应有微仔图片以及社联 LOGO</text>
+</view>
+
+<view>
+  <text>底部应有「思存工作室©」专享 footer</text>
+</view>
