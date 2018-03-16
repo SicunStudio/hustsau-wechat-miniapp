@@ -1,1 +1,2 @@
 /* page/join-us/join-us.wxss */
+@import "../common/lib/weui.wxss";

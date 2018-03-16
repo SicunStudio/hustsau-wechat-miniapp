@@ -1,2 +1,73 @@
 <!--page/join-us/join-us.wxml-->
-<text>page/join-us/join-us.wxml</text>
+<!-- <import src="page/common/head.wxml" /> -->
+<!-- <import src="page/common/foot.wxml" /> -->
+<import src="../common/head.wxml" />
+<import src="../common/foot.wxml" />
+
+<view class="container">
+  <!-- <template is="head" data="{{title: '加入我们'}}" /> -->
+
+  <view class="page-body">
+    <form bindsubmit="" bindreset="">
+
+    <template is="head" data="{{title: '个人信息'}}" />
+
+      <!-- 姓名 -->
+      <view class="page-section">
+        <view class="page-section-title">姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell_bd">
+              <input class="weui-input" name="name" placeholder="" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 性别 -->
+      <view class="page-section">
+        <view class="page-section-title">性别</view>
+        <view class="weui-cells weui-cells_after-title">
+          <radio-group name="gender">
+            <label class="weui-cell weui-check__label">
+              <view class="weui-cell__hd">
+                <radio value="male"/>
+              </view>
+              <view class="weui-cell__bd">男</view>
+            </label>
+            <label class="weui-cell weui-check__label">
+              <view class="weui-cell__hd">
+                <radio value="female"/>
+              </view>
+              <view class="weui-cell__bd">女</view>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <!-- 出生日期 -->
+      <view class="page-section">
+        <view class="page-section-title">出生日期</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label"></view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{startDate}}" start="{{startDate}}" end="{{today}}">
+                <view class="weui-input">{{date}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </form>
+  </view>
+
+  <!-- <text>page/join-us/join-us.wxml</text> -->
+
+  <template is="foot" />
+
+</view>
+

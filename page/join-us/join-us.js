@@ -1,11 +1,13 @@
 // page/join-us/join-us.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    startDate: "1990-01-01",
+    today: new Date().toJSON().slice(0, 10)
   },
 
   /**

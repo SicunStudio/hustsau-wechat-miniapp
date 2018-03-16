@@ -1,5 +1,6 @@
 <template name="foot">
   <navigator class="page-foot" openType="switchTab" url="/page/component/index" hover-class="none">
+    <!-- smdsbz: TODO: 把下面的这个改成「社联思存工作室」 -->
     <image class="icon-foot" src="../../../../image/icon_foot.png"></image>
   </navigator>
 </template>
