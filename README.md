@@ -23,8 +23,8 @@ WeChat miniapp repository
 ### Possible Structure
 
 - [x] Full-Stack JavaScript, back-end using Node.js etc.
-> - [ ] ~Front-end use JS and WeChat stuff, back-end stick with
->       Python + a handy RESTful package~
+> - [ ] Front-end use JS and WeChat stuff, back-end stick with
+>       Python + a handy RESTful package
 
 --------------------------------------------------------------------------------
 
@@ -41,6 +41,7 @@ WeChat miniapp repository
 ## Authors
 
 - [smdsbz](https://github.com/smdsbz)
+- [star-du](https://github.com/star-du)
 
 
 ## Licence and Citing
