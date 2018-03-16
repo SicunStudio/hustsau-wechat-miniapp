@@ -6,19 +6,25 @@ WeChat miniapp repository
 
 ### TODO List
 
-**Til. 2018 Summer:**  
+**Til. 2018 Summer**  
 - [ ] 招新页面
+    1. [ ] 基本表单前后端
+    2. [ ] 基于 GPS 的面试地点导航
+    3. [ ] 基于微信号的报名表合法性验证
 - [ ] 社联简介
+    1. [ ] 横向滚动布局
+
+*各个主模块间用底端 Tab 分离页面*
 
 **Another Day**  
 - [ ] 物资模块迁移：要求后台完成 RESTful 转移
+- [ ] 社团卡功能集成
 
 ### Possible Structure
-*Voting should be done before 2018.3.17*
 
-- [ ] Full-Stack JavaScript, back-end using Node.js / express.js etc.
-- [ ] Front-end use JS and WeChat stuff, back-end stick with
-      Python + a handy RESTful package
+- [x] Full-Stack JavaScript, back-end using Node.js etc.
+> - [ ] ~Front-end use JS and WeChat stuff, back-end stick with
+>       Python + a handy RESTful package~
 
 --------------------------------------------------------------------------------
 
