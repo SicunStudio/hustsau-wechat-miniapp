@@ -10,62 +10,183 @@
   <view class="page-body">
     <form bindsubmit="" bindreset="">
 
+    <!-- 个人信息 -->
     <template is="head" data="{{title: '个人信息'}}" />
 
-      <!-- 姓名 -->
-      <view class="page-section">
-        <view class="page-section-title">姓名</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell_bd">
-              <input class="weui-input" name="name" placeholder="" />
-            </view>
+    <!-- 姓名 -->
+    <view class="page-section">
+      <view class="page-section-title">姓名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <input class="weui-input" name="name" id="name-input" placeholder="" />
           </view>
         </view>
       </view>
+    </view>
 
-      <!-- 性别 -->
-      <view class="page-section">
-        <view class="page-section-title">性别</view>
-        <view class="weui-cells weui-cells_after-title">
-          <radio-group name="gender">
-            <label class="weui-cell weui-check__label">
-              <view class="weui-cell__hd">
-                <radio value="male"/>
-              </view>
-              <view class="weui-cell__bd">男</view>
-            </label>
-            <label class="weui-cell weui-check__label">
-              <view class="weui-cell__hd">
-                <radio value="female"/>
-              </view>
-              <view class="weui-cell__bd">女</view>
-            </label>
-          </radio-group>
-        </view>
-      </view>
-
-      <!-- 出生日期 -->
-      <view class="page-section">
-        <view class="page-section-title">出生日期</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
+    <!-- 性别 -->
+    <view class="page-section">
+      <view class="page-section-title">性别</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group name="gender" id="gender-selector">
+          <label class="weui-cell weui-check__label">
             <view class="weui-cell__hd">
-              <view class="weui-label"></view>
+              <radio value="male"/>
             </view>
-            <view class="weui-cell__bd">
-              <picker mode="date" value="{{startDate}}" start="{{startDate}}" end="{{today}}">
-                <view class="weui-input">{{date}}</view>
-              </picker>
+            <view class="weui-cell__bd">男</view>
+          </label>
+          <label class="weui-cell weui-check__label">
+            <view class="weui-cell__hd">
+              <radio value="female"/>
             </view>
+            <view class="weui-cell__bd">女</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <!-- 出生日期 -->
+    <view class="page-section">
+      <view class="page-section-title">出生日期</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker mode="date" name="birthday" id="birthday-input"
+              value="{{birthday}}" start="{{startDate}}" end="{{today}}"
+              bindchange="bindBirthdayChange">
+              <view class="weui-input">{{birthday}}</view>
+            </picker>
           </view>
         </view>
       </view>
+    </view>
+
+    <!-- 学号 -->
+    <view class="page-section">
+      <view class="page-section-title">学号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <!-- smdsbz: ADDITIONAL: regexp check required! -->
+            <input class="weui-input" name="student-id" id="student-id-input" value="U2018" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 籍贯 -->
+    <!-- smdsbz: TODO: Make it a selection field -->
+    <view class="page-section">
+      <view class="weui-cells__title">籍贯</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindRegionChange" mode="region" name="birth-place" id="birth-place-picker">
+              <view class="weui-input">{{birthPlace}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 宿舍地址 -->
+    <!-- smdsbz: TODO: Make it a selection field -->
+    <view class="page-section">
+      <view class="page-section-title">宿舍地址</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <input class="weui-input" name="apartment" id="apartment-input"
+              placeholder="紫菘xx栋 xxx室" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 专业班级 -->
+    <!-- smdsbz: TODO: Make it a selection field -->
+    <view class="page-section">
+      <view class="page-section-title">专业班级</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <input class="weui-input" name="faculty-and-class" id="faculty-and-class-input"
+              placeholder="" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 电子邮箱 -->
+    <view class="page-section">
+      <view class="page-section-title">电子邮箱</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <!-- smdsbz: TODO: regexp check required! -->
+            <input class="weui-input" type="text" name="email" id="email-input"
+              placeholder="" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系电话 -->
+    <view class="page-section">
+      <view class="page-section-title">联系电话</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell_bd">
+            <input class="weui-input" type="number" maxlength="11" name="mobile" id="mobile-input"
+              placeholder="" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 意愿部门 -->
+    <template is="head" data="{{title: '意愿部门'}}" />
+
+    <!-- 第一志愿 -->
+    <view class="page-section">
+      <view class="weui-cells__title">第一志愿</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDepartmentChange" name="first-department-choice" id="first-department-choice-picker"
+              value="{{firstChoice}}" range="{{departments}}">
+              <view class="weui-input">{{departments[firstChoice]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 第二志愿 -->
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">是否服从调剂</view>
+      <switch name="allow-alternative-department" checked 
+        bindchange="bindAlterChange"/>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">第二志愿</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDepartmentChange" name="second-department-choice" id="second-department-choice-picker"
+              value="{{secondChoice}}" range="{{departments}}" disabled="true">
+              <view class="weui-input" style="color:gray;">{{departments[secondChoice]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+
 
     </form>
   </view>
 
-  <!-- <text>page/join-us/join-us.wxml</text> -->
 
   <template is="foot" />
 
