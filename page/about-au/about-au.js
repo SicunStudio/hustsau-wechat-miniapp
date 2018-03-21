@@ -1,6 +1,10 @@
 // page/about-au/about-au.js
 Page({
-
+  toJoin: function () { 
+    wx.switchTab({
+  url: '../join-us/join-us'
+})
+  },
   /**
    * 页面的初始数据
    */
@@ -8,6 +12,8 @@ Page({
   
   },
 
+
+  
   /**
    * 生命周期函数--监听页面加载
    */

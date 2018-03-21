@@ -1,9 +1,23 @@
 <!--page/about-au/about-au.wxml-->
-<text>page/about-au/about-au.wxml</text>
-<view>
-  <text>此处应有微仔图片以及社联 LOGO</text>
-</view>
+<!-- <import src="page/common/head.wxml" /> -->
+<!-- <import src="page/common/foot.wxml" /> -->
+<import src="../common/head.wxml" />
+<import src="../common/foot.wxml" />
+<!-- star-du: section still experimental -->
+<view class='container'>
+   <template is="head" data="{{title: 'About AU'}}" /> 
+<view class='page-body'>
 
-<view>
+<view class='container'>{{ msg }}
+ <button bindtap="toJoin" type='primary' size='mini'  style='center'>现在就报名</button> 
+ </view>
+
+<!-- <view class='text-box'>
+  <text>此处应有微仔图片以及社联 LOGO</text>
+</view> -->
+</view>
+<!-- <view>
   <text>底部应有「思存工作室©」专享 footer</text>
+</view> -->
+  <template is="foot" />
 </view>
