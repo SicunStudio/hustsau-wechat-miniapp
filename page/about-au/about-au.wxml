@@ -3,12 +3,19 @@
 <!-- <import src="page/common/foot.wxml" /> -->
 <import src="../common/head.wxml" />
 <import src="../common/foot.wxml" />
-<!-- star-du: section still experimental -->
+
 <view class='container'>
    <template is="head" data="{{title: 'About AU'}}" /> 
 <view class='page-body'>
 
+
+
 <view class='container'>{{ msg }}
+
+<map longitude="{{ lon }}" latitude= "{{ lat }}" scale="14" controls="{{controls}}">
+</map>
+ <!--star-du: TODO: get location of the user and show it on the map. Using wx.getLocation(OBJECT) -->
+
  <button bindtap="toJoin" type='primary' size='mini'  style='center'>现在就报名</button> 
  </view>
 

@@ -1,15 +1,28 @@
 // page/about-au/about-au.js
 Page({
+
   toJoin: function () { 
     wx.switchTab({
   url: '../join-us/join-us'
-})
+});
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+      }
+    });
+    
+
   },
   /**
    * 页面的初始数据
    */
   data: {
-  
+    lat: 30.512139,
+    lon: 114.408016,
   },
 
 
