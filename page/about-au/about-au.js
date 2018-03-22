@@ -3,26 +3,33 @@ Page({
 
   toJoin: function () { 
     wx.switchTab({
-  url: '../join-us/join-us'
-});
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var speed = res.speed
-        var accuracy = res.accuracy
-      }
+      url: '../join-us/join-us'
     });
-    
+    // wx.getLocation({
+    //   type: 'wgs84',
+    //   success: function (res) {
+    //     var latitude = res.latitude
+    //     var longitude = res.longitude
+    //     var speed = res.speed
+    //     var accuracy = res.accuracy
+    //   }
+    // });
+    wx.openLocation({
+      type: "wgs84",
+      latitude: this.data.lat,
+      longitude: this.data.lon,
+      scale: 17,
+      name: "36 号楼",
+      address: "SicunStudio"
+    })
 
   },
   /**
    * 页面的初始数据
    */
   data: {
-    lat: 30.512139,
-    lon: 114.408016,
+    lat: 30.516015,
+    lon: 114.415886
   },
 
 

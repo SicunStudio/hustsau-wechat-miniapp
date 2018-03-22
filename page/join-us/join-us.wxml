@@ -8,10 +8,11 @@
   <!-- <template is="head" data="{{title: '加入我们'}}" /> -->
 
   <view class="page-body">
-    <form bindsubmit="" bindreset="">
 
     <!-- 个人信息 -->
     <template is="head" data="{{title: '个人信息'}}" />
+
+    <form bindsubmit="" bindreset="">
 
     <!-- 姓名 -->
     <view class="page-section">
@@ -76,7 +77,6 @@
     </view>
 
     <!-- 籍贯 -->
-    <!-- smdsbz: TODO: Make it a selection field -->
     <view class="page-section">
       <view class="weui-cells__title">籍贯</view>
       <view class="weui-cells weui-cells_after-title">
