@@ -12,7 +12,7 @@
     <!-- 个人信息 -->
     <template is="head" data="{{title: '个人信息'}}" />
 
-    <form bindsubmit="" bindreset="">
+    <form bindsubmit="submitApplicantionForm" bindreset="">
 
     <!-- 姓名 -->
     <view class="page-section">
@@ -175,12 +175,56 @@
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__bd">
             <picker bindchange="bindDepartmentChange" name="second-department-choice" id="second-department-choice-picker"
-              value="{{secondChoice}}" range="{{departments}}" disabled="true">
+              value="{{secondChoice}}" range="{{departments}}">
               <view class="weui-input" style="color:gray;">{{departments[secondChoice]}}</view>
             </picker>
           </view>
         </view>
       </view>
+    </view>
+
+
+    <!-- 其他信息 -->
+    <template is="head" data="{{title: '让我们了解你'}}" />
+
+    <!-- 爱好特长 -->
+    <view class="page-section">
+      <view class="page-section-title">爱好特长</view>
+      <view class="textarea-wrp">
+        <textarea name="hobbies" auto-height />
+      </view>
+    </view>
+
+    <!-- 实践经历 -->
+    <view class="page-section">
+      <view class="page-section-title">实践经历</view>
+      <view class="textarea-wrp">
+        <textarea name="former-experience" auto-height />
+      </view>
+    </view>
+
+    <!-- 自我评价 -->
+    <view class="page-section">
+      <view class="page-section-title">自我评价</view>
+      <view class="textarea-wrp">
+        <textarea name="self-explanation" auto-height />
+      </view>
+    </view>
+
+    <!-- 工作期望 -->
+    <view class="page-section">
+      <view class="page-section-title">你希望社联是个怎样的组织？</view>
+      <view class="textarea-wrp">
+        <textarea name="expectations" style="height: 7em;"
+          placeholder="你希望社联是个怎样的组织？"/>
+      </view>
+    </view>
+
+
+    <!-- submit form button -->
+    <view class="btn-area">
+      <button type="primary" formType="submit">提交报名表</button>
+      <!-- <button formType="reset">Reset</button> -->
     </view>
 
 

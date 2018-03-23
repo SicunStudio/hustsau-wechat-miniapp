@@ -184,6 +184,14 @@ icon {
 .weui-toptips_warn {
   background-color: #E64340;
 }
+textarea {
+  width: 700rpx;
+  padding: 25rpx 0;
+}
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
 .weui-textarea {
   display: block;
   width: 100%;
