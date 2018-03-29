@@ -64,14 +64,16 @@ Page({
    */
   submitApplicantionForm: function (e) {
     var formdata = e.detail.value;
+    var phonenum = /^\d{11}$/;
+    var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
     console.log(formdata);
     // Data legality checks
     // - empty name field
     // ADDITIONAL: Regexp check
-    if (formdata["name"].length === 0) {
+    if (formdata["name"].length === 0 || !chinese_name.test(formdata["name"])) {
       wx.showModal({
-        title: "信息不完整",
-        content: "请填写您的姓名！",
+        title: "信息不完整或有错误",
+        content: "请检查您的姓名是否正确填写！",
         showCancel: false,
         confirmText: "回去修改"
       });
@@ -87,11 +89,11 @@ Page({
       });
       return;
     }
-    // - refuse to provide tel.
-    if (formdata["mobile"].length === 0) {
+    // - refuse to provide tel. or invalid tel
+    if (formdata["mobile"].length === 0 || !phonenum.test(formdata["mobile"]) ) {
       wx.showModal({
-        title: "信息不完整",
-        content: "请填写您的手机号码！我们将以短信的形式通知您面试地点！",
+        title: "信息不完整或有错误",
+        content: "请填写您的手机号码！我们将以短信的形式通知您面试地点！\n如已填写，检查下是否填错了？",
         showCancel: false,
         confirmText: "回去修改"
       });
